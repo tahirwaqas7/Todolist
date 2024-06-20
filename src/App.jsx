@@ -14,7 +14,7 @@ function App() {
 
   const handleEdit = (e, id) => {
     let t = todos.filter(i => id === id);
-    settodo(t[0]);
+    settodo(t[0].todo);
   }
 
   const handleDelete = (e, id) => {
