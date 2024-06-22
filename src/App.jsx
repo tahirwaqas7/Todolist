@@ -83,7 +83,7 @@ function App() {
 
   return (
     <>
-      <div className="md:container my-5 rounded-xl p-5 bg-violet-100 min-h-[80vh] md:w-[40%] md:mx-auto mx-5">
+      <div className="md:container my-5 rounded-xl p-5 bg-violet-100 min-h-[80vh] md:w-[37%] md:mx-auto mx-5">
         <h1 className='font-semibold capitalize text-center text-xl'>iTask - manage your Todos at one place</h1>
         <div className="addTodo my-5 flex flex-col gap-4">
 
@@ -112,7 +112,7 @@ function App() {
               (showFinished || !item.isCompleted) && <div key={item.id} className="todo flex md:w-full my-3 justify-between  p-3 h-full bg-[#fff] rounded-lg bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-60 border border-slate-300 gap-x-1">
                 <div className='flex gap-5'>
                   <input name={item.id} onChange={handleCheckbox} type="checkbox" checked={item.isCompleted} />
-                  <div className={item.isCompleted ? "line-through" : ""}>{item.todo}</div>
+                  <div className={item.isCompleted ? "line-through && text-gray-700 font-semibold" : ""}>{item.todo}</div>
                 </div>
                 <div className="buttons flex h-full">
 
