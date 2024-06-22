@@ -83,6 +83,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <div className="md:container my-5 rounded-xl p-5 bg-violet-100 min-h-[80vh] md:w-[37%] md:mx-auto mx-5">
         <h1 className='font-semibold capitalize text-center text-xl'>iTask - manage your Todos at one place</h1>
         <div className="addTodo my-5 flex flex-col gap-4">
