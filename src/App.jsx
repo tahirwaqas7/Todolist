@@ -90,7 +90,7 @@ function App() {
           <h2 className='text-lg font-bold'>Add a Todo</h2>
 
           <div className="flex gap-2">
-            <input type="text" className='w-full outline-none rounded-md p-1 px-3' onChange={handleChange} value={todo} />
+            <input type="text" className='w-full outline-none rounded-md p-1 px-3' onChange={handleChange} value={todo} onKeyDown={(e) => (e.key === "Enter" ? handleAdd() : null)} />
 
             <button onClick={handleAdd} disabled={todo.length <= 0} className='bg-violet-800 hover:bg-violet-950 p-4 py-2 mx-2 disabled:bg-violet-600  text-sm font-bold text-white rounded-md '>Save</button>
           </div>
