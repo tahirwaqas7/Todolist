@@ -107,27 +107,29 @@ function App() {
         <div className="todos">
           {todos.length === 0 && <div className='m-5'>No Todos to display</div>}
 
-          {todos.map(item => (
-            (showFinished || !item.isCompleted) && (
+          {todos.map(item => {
+            return (
+              (showFinished || !item.isCompleted) && (
 
-              <div key={item.id} className="todo flex md:w-full my-3 justify-between p-3 h-full bg-[#fff] rounded-lg bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-60 border border-slate-300 gap-x-1">
+                <div key={item.id} className="todo flex md:w-full my-3 justify-between p-3 h-full bg-[#fff] rounded-lg bg-clip-padding backdrop-filter backdrop-blur-2xl bg-opacity-60 border border-slate-300 gap-x-1">
 
-                <div className='flex gap-5'>
-                  <input name={item.id} onChange={() => handleCheckbox(item.id)} type="checkbox" checked={item.isCompleted} />
-                  <div className={item.isCompleted ? "line-through text-gray-700 font-semibold" : ""}>{item.todo}</div>
+                  <div className='flex gap-5'>
+                    <input name={item.id} onChange={() => handleCheckbox(item.id)} type="checkbox" checked={item.isCompleted} />
+                    <div className={item.isCompleted ? "line-through text-gray-700 font-semibold" : ""}>{item.todo}</div>
+                  </div>
+
+                  <div className="buttons flex h-full">
+
+                    <button onClick={() => handleEdit(item.id)} className='bg-violet-800 hover:bg-violet-950 p-3 py-2 font-bold text-white rounded-md mx-1 text-lg '><LuClipboardEdit /></button>
+
+                    <button onClick={() => handleDelete(item.id)} className='bg-violet-800 hover:bg-violet-950 p-3 py-2 text-lg font-bold text-white rounded-md mx-1'><MdDeleteSweep /></button>
+                  </div>
+
                 </div>
 
-                <div className="buttons flex h-full">
-
-                  <button onClick={() => handleEdit(item.id)} className='bg-violet-800 hover:bg-violet-950 p-3 py-2 font-bold text-white rounded-md mx-1 text-lg '><LuClipboardEdit /></button>
-
-                  <button onClick={() => handleDelete(item.id)} className='bg-violet-800 hover:bg-violet-950 p-3 py-2 text-lg font-bold text-white rounded-md mx-1'><MdDeleteSweep /></button>
-                </div>
-
-              </div>
-
+              )
             )
-          ))}
+          })}
 
         </div>
       </div>
