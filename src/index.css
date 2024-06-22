@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+
+    background-image: url(./assets/photo-1528459801416-a9e53bbf4e17.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
